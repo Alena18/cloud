@@ -22,7 +22,7 @@ import threejs from "./tech/threejs.svg";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
-import github from "./company/github.png";
+import star from "./company/star.png";
 import tesla from "./company/tesla.png";
 
 import carrent from "./carrent.png";
@@ -35,13 +35,13 @@ export {
   js,
   python,
   web,
-  github,
+  star,
   menu,
   close,
   css,
   docker,
   figma,
-  git,
+  github,
   html,
   javascript,
   mongodb,
@@ -53,6 +53,7 @@ export {
   threejs,
   meta,
   shopify,
+  git,
   tesla,
   carrent,
   jobit,

@@ -1,5 +1,5 @@
 {
-  "name": "cloud",
+  "name": "js",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -19,6 +19,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.25.0",
+    "react-scroll": "^1.9.0",
     "react-tilt": "^1.0.2",
     "react-vertical-timeline-component": "^3.6.0",
     "styled-components": "^6.1.12",

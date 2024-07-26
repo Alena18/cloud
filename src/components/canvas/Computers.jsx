@@ -2,13 +2,13 @@ import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Computers = ({ isMobile, onClick }) => {
   const computer = useGLTF("./cloud_test/scene.gltf");
   const [isRotating, setIsRotating] = useState(false);
   const [rotationAngle, setRotationAngle] = useState(Math.PI); // Start angle at the left side
-  const radius = 5; // Radius for the circular path
+  const radius = 6; // Radius for the circular path
   const center = [0, 0, 0]; // Center point of the circular rotation
   const initialPosition = [0, 0, -10]; // Adjust this based on your scene
 
@@ -18,7 +18,7 @@ const Computers = ({ isMobile, onClick }) => {
   };
 
   const rotate = () => {
-    setRotationAngle((prevAngle) => prevAngle + 0.005); // Speed adjustment
+    setRotationAngle((prevAngle) => prevAngle + 0.006); // Speed adjustment
   };
 
   useEffect(() => {
@@ -41,7 +41,11 @@ const Computers = ({ isMobile, onClick }) => {
   const z = center[2] + radius * Math.sin(rotationAngle);
 
   return (
-    <group onClick={handleClick} position={[x, initialPosition[1], z]} rotation={[0, rotationAngle, 0]}>
+    <group
+      onClick={handleClick}
+      position={[x, initialPosition[1], z]}
+      rotation={[0, rotationAngle, 0]}
+    >
       <mesh rotation={[0, 0, 0]}>
         <hemisphereLight intensity={0.15} groundColor="black" />
         <spotLight
@@ -74,7 +78,7 @@ const Button = styled.button`
   cursor: pointer;
   z-index: 1000;
   transform: translate(-50%, -50%);
-  top: 50%;
+  top: 55%;
   left: 50%;
 
   &:hover {
@@ -96,7 +100,8 @@ const ComputersCanvas = () => {
     setIsMobile(mediaQuery.matches);
     const handleMediaQueryChange = (event) => setIsMobile(event.matches);
     mediaQuery.addEventListener("change", handleMediaQueryChange);
-    return () => mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    return () =>
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
   }, []);
 
   const handleSceneClick = () => {
@@ -106,15 +111,13 @@ const ComputersCanvas = () => {
   return (
     <>
       {showButton && (
-        <Button onClick={() => setShowButton(false)}>
-          Click the Cloud
-        </Button>
+        <Button onClick={() => setShowButton(false)}>Click the Cloud</Button>
       )}
       <Canvas
         frameloop="demand"
         shadows
         dpr={[1, 2]}
-        camera={{ position: [20, 3, 10], fov: 25 }}
+        camera={{ position: [20, 10, 14], fov: 30 }}
         gl={{ preserveDrawingBuffer: true }}
       >
         <Suspense fallback={<CanvasLoader />}>

@@ -33,6 +33,23 @@
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.vertical-timeline-element {
+  margin: 0; /* Remove default margin */
+}
+
+.vertical-timeline-element-content {
+  border-radius: 10px; /* Add some border radius if needed */
+}
+
+.vertical-timeline-element-content-arrow {
+  border-right: 7px solid #232631; /* Ensure correct color */
+}
+
+.vertical-timeline-element-content {
+  background: #1d1836; /* Background color for content */
+  color: #fff; /* Text color */
+}
+
 .violet-gradient {
   background: #804dee;
   background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
