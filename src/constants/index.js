@@ -1,28 +1,26 @@
 import {
   python,
+  logopython,
+  bootstrap,
+  flask,
+  azure,
+  heroku,
+  jquery,
+  postgresql,
+  mysql,
   ux,
   js,
   web,
   javascript,
-  typescript,
   html,
-  css,
+  adobe,
   reactjs,
-  redux,
   tailwind,
-  nodejs,
   mongodb,
-  git,
-  figma,
-  docker,
-  meta,
   github,
-  tesla,
-  shopify,
   carrent,
   jobit,
   tripguide,
-  threejs,
 } from "../assets";
 
 export const navLinks = [
@@ -65,56 +63,62 @@ const technologies = [
     icon: html,
   },
   {
-    name: "CSS 3",
-    icon: css,
+    name: "github",
+    icon: github,
   },
   {
     name: "JavaScript",
     icon: javascript,
   },
   {
-    name: "TypeScript",
-    icon: typescript,
+    name: "Python",
+    icon: logopython,
   },
   {
-    name: "React JS",
-    icon: reactjs,
+    name: "Bootstrap",
+    icon: bootstrap,
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
+    name: "Flask",
+    icon: flask,
+  },
+  {
+    name: "Azure",
+    icon: azure,
+  },
+  {
+    name: "Heroku",
+    icon: heroku,
+  },
+  {
+    name: "JQuery",
+    icon: jquery,
+  },
+  {
+    name: "PostgreSQL",
+    icon: postgresql,
+  },
+
+  {
+    name: "MySQL",
+    icon: mysql,
   },
   {
     name: "Tailwind CSS",
     icon: tailwind,
   },
   {
-    name: "Node JS",
-    icon: nodejs,
+    name: "React JS",
+    icon: reactjs,
   },
   {
     name: "MongoDB",
     icon: mongodb,
   },
+
   {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "github",
-    icon: github,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
+    name: "Adobe Suit",
+    icon: adobe,
   },
 ];
 
@@ -123,7 +127,7 @@ const experiences = [
     title: "Full-Stack Developer",
     company_name: "https://github.com/Alena18",
     icon: github,
-    iconBg: "#383E56",
+    iconBg: "#00cea8",
     date: "2019 - 2024",
     points: [
       "Developing and deploying full-stack applications using a variety of technologies and frameworks, such as React.js, Flask, Django, and Angular, to deliver scalable and maintainable solutions.",
@@ -137,7 +141,7 @@ const experiences = [
     company_name:
       "https://alena18.github.io/FlashcardsEnglishBelarusianPetsMemoryGame/",
     icon: js,
-    iconBg: "#383E56",
+    iconBg: "#00cea8",
     date: "2022 - 2023",
     points: [
       "Developing interactive web applications using JavaScript and related libraries and frameworks, ensuring dynamic user experiences and responsive design.",
@@ -150,7 +154,7 @@ const experiences = [
     title: "Python",
     company_name: "https://hang-a-dictator.herokuapp.com/",
     icon: python,
-    iconBg: "#383E56",
+    iconBg: "#00cea8",
     date: "2022 - 2023",
     points: [
       "Developing and maintaining robust back-end services using Python frameworks such as Flask and Django, ensuring scalability and performance.",
@@ -163,7 +167,7 @@ const experiences = [
     title: "UX Design",
     company_name: "https://alena18.github.io/UX-Design/",
     icon: ux,
-    iconBg: "#383E56",
+    iconBg: "#00cea8",
     date: "2020 - 2021",
     points: [
       "Conducting thorough UX research to create user personas and journey maps, ensuring a deep understanding of user needs and behaviors.",

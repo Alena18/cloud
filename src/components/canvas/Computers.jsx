@@ -67,30 +67,6 @@ const Computers = ({ isMobile, onClick }) => {
   );
 };
 
-const Button = styled.button`
-  position: absolute;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #804dee;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  z-index: 1000;
-  transform: translate(-50%, -50%);
-  top: 55%;
-  left: 50%;
-
-  &:hover {
-    background-color: #f0f0f0;
-  }
-
-  @media (max-width: 1024px) and (max-height: 640px) {
-    top: 70%; /* Adjust these values as needed for the Nest Hub */
-    left: 20%;
-  }
-`;
-
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [showButton, setShowButton] = useState(true);
@@ -111,7 +87,9 @@ const ComputersCanvas = () => {
   return (
     <>
       {showButton && (
-        <Button onClick={() => setShowButton(false)}>Click the Cloud</Button>
+        <button className="button" onClick={() => setShowButton(false)}>
+          Click the Cloud
+        </button>
       )}
       <Canvas
         frameloop="demand"

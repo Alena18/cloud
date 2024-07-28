@@ -6,24 +6,21 @@ import web from "./web.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
-import css from "./tech/css.png";
-import docker from "./tech/docker.png";
-import figma from "./tech/figma.png";
-import git from "./tech/git.png";
+import adobe from "./tech/adobe.svg";
+import logopython from "./tech/python.png";
+import bootstrap from "./tech/bootstrap.svg";
+import flask from "./tech/flask.svg";
+import azure from "./tech/azure.png";
+import heroku from "./tech/heroku.svg";
+import jquery from "./tech/jquery.svg";
+import postgresql from "./tech/postgresql.svg";
+import mysql from "./tech/mysql.svg";
 import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
 import mongodb from "./tech/mongodb.png";
-import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
-import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
-import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
-
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import github from "./company/github.png";
-import tesla from "./company/tesla.png";
+import github from "./tech/github.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -34,26 +31,24 @@ export {
   ux,
   js,
   python,
+  logopython,
+  bootstrap,
+  flask,
+  azure,
+  heroku,
+  jquery,
+  postgresql,
+  mysql,
   web,
   github,
   menu,
   close,
-  css,
-  docker,
-  figma,
-  git,
+  adobe,
   html,
   javascript,
   mongodb,
-  nodejs,
   reactjs,
-  redux,
   tailwind,
-  typescript,
-  threejs,
-  meta,
-  shopify,
-  tesla,
   carrent,
   jobit,
   tripguide,
