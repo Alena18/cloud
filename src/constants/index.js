@@ -2,7 +2,6 @@ import {
   python,
   logopython,
   bootstrap,
-  flask,
   azure,
   heroku,
   jquery,
@@ -18,9 +17,9 @@ import {
   tailwind,
   mongodb,
   github,
-  carrent,
-  jobit,
-  tripguide,
+  olympic,
+  blog,
+  guesscard,
 } from "../assets";
 
 export const navLinks = [
@@ -77,10 +76,6 @@ const technologies = [
   {
     name: "Bootstrap",
     icon: bootstrap,
-  },
-  {
-    name: "Flask",
-    icon: flask,
   },
   {
     name: "Azure",
@@ -178,87 +173,62 @@ const experiences = [
   },
 ];
 
-const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-  },
-];
-
 const projects = [
   {
-    name: "Car Rent",
+    name: "Victoria's Bakery Blog",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Victoria's Bakery Blog is a web-based platform that allows users to explore, comment on, and like a variety of recipes, as well as discover cooking tricks and tips, providing a delightful and interactive resource for baking enthusiasts.",
     tags: [
       {
-        name: "react",
+        name: "Heroku",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "PostgreSQL",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "Python",
         color: "pink-text-gradient",
       },
+      {
+        name: "JavaScript",
+        color: "orange-text-gradient",
+      },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: blog,
+    source_code_link:
+      "https://github.com/Alena18/BakeryBlog3?tab=readme-ov-file",
   },
   {
-    name: "Job IT",
+    name: "Memory Game",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Flashcards English Belarusian Pets Memory Game Flashcards English Belarusian Pets Memory Game is the site that represents a flashcard game.",
     tags: [
       {
-        name: "react",
-        color: "blue-text-gradient",
+        name: "JavaScript",
+        color: "orange-text-gradient",
       },
       {
-        name: "restapi",
+        name: "GitHub",
         color: "green-text-gradient",
       },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: guesscard,
+    source_code_link:
+      "https://github.com/Alena18/FlashcardsEnglishBelarusianPetsMemoryGame",
   },
   {
-    name: "Trip Guide",
+    name: "RetrOlympic Hackathon Game",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Developed a retro game in 30 hours using the Kaboom.js framework, transforming game design and art assets into a fully functioning and playable game in JavaScript.",
     tags: [
       {
-        name: "nextjs",
+        name: "Kaboom.js",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "JavaScript",
         color: "green-text-gradient",
       },
       {
@@ -266,9 +236,9 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: olympic,
+    source_code_link: "https://github.com/Alena18/Retro-Olympic-Sidescroller",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, projects };

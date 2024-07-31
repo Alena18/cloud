@@ -9,7 +9,6 @@ import close from "./close.svg";
 import adobe from "./tech/adobe.svg";
 import logopython from "./tech/python.png";
 import bootstrap from "./tech/bootstrap.svg";
-import flask from "./tech/flask.svg";
 import azure from "./tech/azure.png";
 import heroku from "./tech/heroku.svg";
 import jquery from "./tech/jquery.svg";
@@ -22,9 +21,9 @@ import reactjs from "./tech/reactjs.png";
 import tailwind from "./tech/tailwind.png";
 import github from "./company/github.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import blog from "./blog.png";
+import olympic from "./olympic.png";
+import guesscard from "./guesscard.png";
 
 export {
   logo,
@@ -33,7 +32,6 @@ export {
   python,
   logopython,
   bootstrap,
-  flask,
   azure,
   heroku,
   jquery,
@@ -50,7 +48,7 @@ export {
   mongodb,
   reactjs,
   tailwind,
-  carrent,
-  jobit,
-  tripguide,
+  olympic,
+  blog,
+  guesscard,
 };

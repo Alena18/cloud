@@ -1,5 +1,4 @@
-// BallCanvas.jsx
-import React, { Suspense } from "react";
+import React, { Suspense, useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   Decal,
@@ -11,7 +10,8 @@ import {
 import CanvasLoader from "../Loader";
 
 const Ball = ({ imgUrl, onBallTouch }) => {
-  const [decal] = useTexture([imgUrl]);
+  // Use useMemo to prevent unnecessary re-renders of the texture
+  const decal = useTexture(imgUrl);
 
   return (
     <Float
@@ -44,17 +44,22 @@ const Ball = ({ imgUrl, onBallTouch }) => {
 };
 
 const BallCanvas = ({ icon, onBallTouch }) => {
+  // Use useMemo to avoid unnecessary Canvas re-renders
+  const canvasProps = useMemo(
+    () => ({
+      frameloop: "demand",
+      dpr: [1, 2],
+      gl: { preserveDrawingBuffer: true },
+    }),
+    []
+  );
+
   return (
-    <Canvas
-      frameloop="demand"
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
-    >
+    <Canvas {...canvasProps}>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
         <Ball imgUrl={icon} onBallTouch={onBallTouch} />
       </Suspense>
-
       <Preload all />
     </Canvas>
   );
