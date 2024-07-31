@@ -3,10 +3,10 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
 
-const Stars = (props) => {
+const Stars = ({ isMobile, ...props }) => {
   const ref = useRef();
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(2000), { radius: 1.2 })
+    random.inSphere(new Float32Array(isMobile ? 500 : 2000), { radius: 1.2 })
   );
 
   useFrame((state, delta) => {
@@ -16,10 +16,8 @@ const Stars = (props) => {
     }
   });
 
-  // Cleanup logic for geometry or materials if necessary
   useEffect(() => {
     return () => {
-      // Clean up any resources here if needed
       if (ref.current) {
         ref.current.geometry.dispose();
         ref.current.material.dispose();
@@ -33,7 +31,7 @@ const Stars = (props) => {
         <PointMaterial
           transparent
           color="#00cea8"
-          size={0.001}
+          size={isMobile ? 0.001 : 0.002} // Adjust size for mobile
           sizeAttenuation={true}
           depthWrite={false}
         />
@@ -43,13 +41,26 @@ const Stars = (props) => {
 };
 
 const StarsCanvas = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   useEffect(() => {
     const handleContextLost = (event) => {
       event.preventDefault();
       console.warn(
         "WebGL context lost. Consider reinitializing your application."
       );
-      // Optional: Implement context reinitialization if needed
     };
 
     window.addEventListener("webglcontextlost", handleContextLost);
@@ -63,7 +74,7 @@ const StarsCanvas = () => {
     <div className="w-full h-auto absolute inset-0 z-[-1]">
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Suspense fallback={null}>
-          <Stars />
+          <Stars isMobile={isMobile} />
         </Suspense>
 
         <Preload all />
