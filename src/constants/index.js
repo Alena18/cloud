@@ -8,7 +8,6 @@ import {
   js,
   web,
   javascript,
-  html,
   reactjs,
   mongodb,
   github,
@@ -52,10 +51,6 @@ const services = [
 ];
 
 const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
   {
     name: "github",
     icon: github,

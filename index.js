@@ -10,7 +10,6 @@ import logopython from "./tech/python.png";
 import bootstrap from "./tech/bootstrap.svg";
 import heroku from "./tech/heroku.svg";
 import postgresql from "./tech/postgresql.svg";
-import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
 import mongodb from "./tech/mongodb.png";
 import reactjs from "./tech/reactjs.png";
@@ -34,7 +33,6 @@ export {
   menu,
   close,
   github,
-  html,
   javascript,
   mongodb,
   reactjs,
