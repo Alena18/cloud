@@ -73,10 +73,6 @@ const technologies = [
     icon: bootstrap,
   },
   {
-    name: "Azure",
-    icon: azure,
-  },
-  {
     name: "Heroku",
     icon: heroku,
   },
