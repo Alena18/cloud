@@ -2,7 +2,6 @@ import {
   python,
   logopython,
   bootstrap,
-  azure,
   heroku,
   postgresql,
   ux,

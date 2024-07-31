@@ -8,7 +8,6 @@ import close from "./close.svg";
 
 import logopython from "./tech/python.png";
 import bootstrap from "./tech/bootstrap.svg";
-import azure from "./tech/azure.png";
 import heroku from "./tech/heroku.svg";
 import postgresql from "./tech/postgresql.svg";
 import html from "./tech/html.png";
@@ -28,7 +27,6 @@ export {
   python,
   logopython,
   bootstrap,
-  azure,
   heroku,
   postgresql,
   web,
