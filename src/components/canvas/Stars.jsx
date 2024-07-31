@@ -3,10 +3,10 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
 
-const Stars = ({ isMobile, ...props }) => {
+const Stars = (props) => {
   const ref = useRef();
-  const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(isMobile ? 500 : 2000), { radius: 1.2 })
+  const [sphere] = useState(
+    () => random.inSphere(new Float32Array(4000), { radius: 1.2 }) // Adjust number of points
   );
 
   useFrame((state, delta) => {
@@ -31,7 +31,7 @@ const Stars = ({ isMobile, ...props }) => {
         <PointMaterial
           transparent
           color="#00cea8"
-          size={isMobile ? 0.001 : 0.002} // Adjust size for mobile
+          size={0.002}
           sizeAttenuation={true}
           depthWrite={false}
         />
@@ -39,6 +39,10 @@ const Stars = ({ isMobile, ...props }) => {
     </group>
   );
 };
+
+const MobileBackground = () => (
+  <div style={{ width: "100%", height: "100%", backgroundColor: "#000" }}></div> // Example mobile background
+);
 
 const StarsCanvas = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -72,13 +76,17 @@ const StarsCanvas = () => {
 
   return (
     <div className="w-full h-auto absolute inset-0 z-[-1]">
-      <Canvas camera={{ position: [0, 0, 1] }}>
-        <Suspense fallback={null}>
-          <Stars isMobile={isMobile} />
-        </Suspense>
+      {isMobile ? (
+        <MobileBackground /> // Render a different background for mobile
+      ) : (
+        <Canvas camera={{ position: [0, 0, 1] }}>
+          <Suspense fallback={null}>
+            <Stars />
+          </Suspense>
 
-        <Preload all />
-      </Canvas>
+          <Preload all />
+        </Canvas>
+      )}
     </div>
   );
 };
