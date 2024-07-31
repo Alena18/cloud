@@ -11,7 +11,6 @@ import logopython from "./tech/python.png";
 import bootstrap from "./tech/bootstrap.svg";
 import azure from "./tech/azure.png";
 import heroku from "./tech/heroku.svg";
-import jquery from "./tech/jquery.svg";
 import postgresql from "./tech/postgresql.svg";
 import mysql from "./tech/mysql.svg";
 import html from "./tech/html.png";
@@ -34,7 +33,6 @@ export {
   bootstrap,
   azure,
   heroku,
-  jquery,
   postgresql,
   mysql,
   web,

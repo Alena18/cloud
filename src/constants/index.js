@@ -4,7 +4,6 @@ import {
   bootstrap,
   azure,
   heroku,
-  jquery,
   postgresql,
   mysql,
   ux,
@@ -84,10 +83,6 @@ const technologies = [
   {
     name: "Heroku",
     icon: heroku,
-  },
-  {
-    name: "JQuery",
-    icon: jquery,
   },
   {
     name: "PostgreSQL",
