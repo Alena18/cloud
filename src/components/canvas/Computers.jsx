@@ -1,10 +1,11 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useMemo, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
+// Component to handle the rotating computer model
 const Computers = ({ isMobile, onClick }) => {
-  const computer = useGLTF("./cloud_test/scene.gltf");
+  const { scene: computer } = useGLTF("./cloud_test/scene.gltf");
   const [isRotating, setIsRotating] = useState(false);
   const [rotationAngle, setRotationAngle] = useState(Math.PI); // Start angle at the left side
   const radius = 6; // Radius for the circular path
@@ -36,8 +37,14 @@ const Computers = ({ isMobile, onClick }) => {
   }, [isRotating]);
 
   // Calculate the new position based on rotation angle and radius
-  const x = center[0] + radius * Math.cos(rotationAngle);
-  const z = center[2] + radius * Math.sin(rotationAngle);
+  const x = useMemo(
+    () => center[0] + radius * Math.cos(rotationAngle),
+    [rotationAngle, radius, center]
+  );
+  const z = useMemo(
+    () => center[2] + radius * Math.sin(rotationAngle),
+    [rotationAngle, radius, center]
+  );
 
   return (
     <group
@@ -45,7 +52,7 @@ const Computers = ({ isMobile, onClick }) => {
       position={[x, initialPosition[1], z]}
       rotation={[0, rotationAngle, 0]}
     >
-      <mesh rotation={[0, 0, 0]}>
+      <mesh>
         <hemisphereLight intensity={0.15} groundColor="black" />
         <spotLight
           position={[-20, 50, 10]}
@@ -57,7 +64,7 @@ const Computers = ({ isMobile, onClick }) => {
         />
         <pointLight intensity={7} />
         <primitive
-          object={computer.scene}
+          object={computer}
           scale={isMobile ? 0.7 : 0.75}
           position={isMobile ? [0, -4, 3] : [0, -4, 1.5]}
         />
@@ -66,17 +73,16 @@ const Computers = ({ isMobile, onClick }) => {
   );
 };
 
+// Component to manage the canvas and responsiveness
 const ComputersCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
   const [showButton, setShowButton] = useState(true);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
-    setIsMobile(mediaQuery.matches);
-    const handleMediaQueryChange = (event) => setIsMobile(event.matches);
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-    return () =>
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    const handleResize = () => setIsMobile(window.innerWidth <= 767);
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const handleSceneClick = () => {
@@ -86,7 +92,7 @@ const ComputersCanvas = () => {
   return (
     <>
       {showButton && (
-        <button className="button" onClick={() => setShowButton(false)}>
+        <button className="button" onClick={handleSceneClick}>
           Click the Cloud
         </button>
       )}
@@ -94,7 +100,7 @@ const ComputersCanvas = () => {
         frameloop="demand"
         shadows
         dpr={[1, 2]}
-        camera={{ position: [20, 10, 14], fov: 30 }}
+        camera={{ position: [20, 10, 14], fov: isMobile ? 45 : 30 }}
         gl={{ preserveDrawingBuffer: true }}
       >
         <Suspense fallback={<CanvasLoader />}>
