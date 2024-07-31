@@ -6,13 +6,11 @@ import web from "./web.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
-import adobe from "./tech/adobe.svg";
 import logopython from "./tech/python.png";
 import bootstrap from "./tech/bootstrap.svg";
 import azure from "./tech/azure.png";
 import heroku from "./tech/heroku.svg";
 import postgresql from "./tech/postgresql.svg";
-import mysql from "./tech/mysql.svg";
 import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
 import mongodb from "./tech/mongodb.png";
@@ -34,12 +32,10 @@ export {
   azure,
   heroku,
   postgresql,
-  mysql,
   web,
   star,
   menu,
   close,
-  adobe,
   github,
   html,
   javascript,

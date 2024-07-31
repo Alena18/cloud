@@ -5,13 +5,11 @@ import {
   azure,
   heroku,
   postgresql,
-  mysql,
   ux,
   js,
   web,
   javascript,
   html,
-  adobe,
   reactjs,
   tailwind,
   mongodb,
@@ -88,11 +86,6 @@ const technologies = [
     name: "PostgreSQL",
     icon: postgresql,
   },
-
-  {
-    name: "MySQL",
-    icon: mysql,
-  },
   {
     name: "Tailwind CSS",
     icon: tailwind,
@@ -104,11 +97,6 @@ const technologies = [
   {
     name: "MongoDB",
     icon: mongodb,
-  },
-
-  {
-    name: "Adobe Suit",
-    icon: adobe,
   },
 ];
 
