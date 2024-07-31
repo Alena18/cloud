@@ -2,6 +2,7 @@ import { useState, useRef, useEffect, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
+import useIsMobile from "./useIsMobile"; // Import the custom hook for detecting mobile devices
 
 const Stars = (props) => {
   const ref = useRef();
@@ -41,23 +42,11 @@ const Stars = (props) => {
 };
 
 const MobileBackground = () => (
-  <div style={{ width: "100%", height: "100%", backgroundColor: "#000" }}></div> // Example mobile background
+  <div style={{ width: "100%", height: "100%", backgroundColor: "#000" }}></div> // Mobile background
 );
 
 const StarsCanvas = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const isMobile = useIsMobile(); // Use the custom hook to detect mobile devices
 
   useEffect(() => {
     const handleContextLost = (event) => {
