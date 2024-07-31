@@ -11,7 +11,6 @@ import {
   javascript,
   html,
   reactjs,
-  tailwind,
   mongodb,
   github,
   olympic,
@@ -85,10 +84,6 @@ const technologies = [
   {
     name: "PostgreSQL",
     icon: postgresql,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
   },
   {
     name: "React JS",

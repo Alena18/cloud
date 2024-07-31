@@ -6,7 +6,7 @@ import * as random from "maath/random/dist/maath-random.esm";
 const Stars = (props) => {
   const ref = useRef();
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(5000), { radius: 1.2 })
+    random.inSphere(new Float32Array(2000), { radius: 1.2 })
   );
 
   useFrame((state, delta) => {
@@ -33,7 +33,7 @@ const Stars = (props) => {
         <PointMaterial
           transparent
           color="#00cea8"
-          size={0.002}
+          size={0.001}
           sizeAttenuation={true}
           depthWrite={false}
         />

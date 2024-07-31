@@ -15,7 +15,6 @@ import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
 import mongodb from "./tech/mongodb.png";
 import reactjs from "./tech/reactjs.png";
-import tailwind from "./tech/tailwind.png";
 import github from "./tech/github.png";
 
 import blog from "./blog.png";
@@ -40,7 +39,6 @@ export {
   javascript,
   mongodb,
   reactjs,
-  tailwind,
   olympic,
   blog,
   guesscard,
