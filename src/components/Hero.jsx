@@ -23,8 +23,9 @@ const Hero = () => {
           </p>
         </div>
       </div>
-
-      <CloudsCanvas />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <CloudsCanvas />
+      </div>
     </section>
   );
 };

@@ -96,25 +96,26 @@ const CloudsCanvas = () => {
           Click the Cloud
         </button>
       )}
-      <Canvas
-        frameloop="demand"
-        shadows
-        dpr={[1, 2]}
-        camera={{ position: [20, 10, 14], fov: isMobile ? 45 : 30 }}
-        gl={{ preserveDrawingBuffer: true }}
-        className="canvas-style"
-      >
-        <Suspense fallback={<CanvasLoader />}>
-          <OrbitControls
-            enableZoom={false}
-            enableRotate={false}
-            maxPolarAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 2}
-          />
-          <Clouds isMobile={isMobile} onClick={handleSceneClick} />
-        </Suspense>
-        <Preload all />
-      </Canvas>
+      <div className="canvas-container">
+        <Canvas
+          frameloop="demand"
+          shadows
+          dpr={[1, 2]}
+          camera={{ position: [20, 10, 14], fov: isMobile ? 45 : 30 }}
+          gl={{ preserveDrawingBuffer: true }}
+        >
+          <Suspense fallback={<CanvasLoader />}>
+            <OrbitControls
+              enableZoom={false}
+              enableRotate={false}
+              maxPolarAngle={Math.PI / 2}
+              minPolarAngle={Math.PI / 2}
+            />
+            <Clouds isMobile={isMobile} onClick={handleSceneClick} />
+          </Suspense>
+          <Preload all />
+        </Canvas>
+      </div>
     </>
   );
 };
