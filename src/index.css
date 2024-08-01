@@ -43,7 +43,7 @@
   cursor: pointer;
   z-index: 1000;
   transform: translate(-50%, -50%);
-  top: 42%;
+  top: 70%;
   left: 50%;
   transition: background-color 0.3s ease;
 }
@@ -65,9 +65,14 @@
   transform: translate(-50%, -50%); /* Center the container */  
 }
 
-@media (max-width: 1024px) and (max-height: 640px) {
+@media (max-width: 1280px) and (max-height: 800px) {
   .button {
     top: 70%; /* Adjust these values as needed for the Nest Hub */
+  }
+}
+@media (max-width: 1024px) and (max-height: 640px) {
+  .button {
+    top: 80%; /* Adjust these values as needed for the Nest Hub */
     left: 50%;
   }
   .button-top-5 {
@@ -75,16 +80,9 @@
     left: 50%;
   }
   .canvas-container {
-    top: 65%; /* Center vertically */
-    left: 30%; /* Center horizontally */
+    top: 60%; /* Center vertically */
+    left: 50%; /* Center horizontally */
   }
-}
-
-@media (max-width: 1280px) and (max-height: 800px) {
-  .button {
-    top: 48%; /* Adjust these values as needed for the Nest Hub */
-  }
-
 }
 
 @media (max-width: 600px){
