@@ -3,14 +3,14 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
-// Component to handle the rotating computer model
-const Computers = ({ isMobile, onClick }) => {
-  const { scene: computer } = useGLTF("./cloud_test/scene.gltf");
+// Component to handle the rotating Cloud model
+const Clouds = ({ isMobile, onClick }) => {
+  const { scene: Cloud } = useGLTF("./cloud_test/scene.gltf");
   const [isRotating, setIsRotating] = useState(false);
   const [rotationAngle, setRotationAngle] = useState(Math.PI); // Start angle at the left side
   const radius = 6; // Radius for the circular path
   const center = [0, 0, 0]; // Center point of the circular rotation
-  const initialPosition = [0, 0, -10]; // Adjust this based on your scene
+  const initialPosition = [0, 0, 0]; // Adjust this based on the scene
 
   const handleClick = () => {
     setIsRotating(!isRotating);
@@ -64,7 +64,7 @@ const Computers = ({ isMobile, onClick }) => {
         />
         <pointLight intensity={7} />
         <primitive
-          object={computer}
+          object={Cloud}
           scale={isMobile ? 0.7 : 0.75}
           position={isMobile ? [0, -4, 3] : [0, -4, 1.5]}
         />
@@ -74,7 +74,7 @@ const Computers = ({ isMobile, onClick }) => {
 };
 
 // Component to manage the canvas and responsiveness
-const ComputersCanvas = () => {
+const CloudsCanvas = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
   const [showButton, setShowButton] = useState(true);
 
@@ -102,6 +102,7 @@ const ComputersCanvas = () => {
         dpr={[1, 2]}
         camera={{ position: [20, 10, 14], fov: isMobile ? 45 : 30 }}
         gl={{ preserveDrawingBuffer: true }}
+        className="canvas-style"
       >
         <Suspense fallback={<CanvasLoader />}>
           <OrbitControls
@@ -110,7 +111,7 @@ const ComputersCanvas = () => {
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={Math.PI / 2}
           />
-          <Computers isMobile={isMobile} onClick={handleSceneClick} />
+          <Clouds isMobile={isMobile} onClick={handleSceneClick} />
         </Suspense>
         <Preload all />
       </Canvas>
@@ -118,4 +119,4 @@ const ComputersCanvas = () => {
   );
 };
 
-export default ComputersCanvas;
+export default CloudsCanvas;
